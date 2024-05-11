@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "236757949816",
+    "project_id": "spiceway-8848e",
+    "storage_bucket": "spiceway-8848e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:236757949816:android:7592cfcf45c698cf923c8d",
+        "android_client_info": {
+          "package_name": "com.example.spiceway"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "236757949816-3fklp38h9q5jc6ig9s0u2op76na0v8kr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA3zWZKLYnevovJy5n8ihzI8-6DDgdKtFA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "236757949816-3fklp38h9q5jc6ig9s0u2op76na0v8kr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
