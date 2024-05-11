@@ -44,9 +44,9 @@ class _LoginScreenState extends State<LoginScreen> {
                     TextFormField(
                       controller: nameController,
                       decoration: InputDecoration(
-                          hintText: "  NAME",
+                          hintText: "Username",
                           // hintStyle: TextStyle(color: Colors.white),
-                          labelText: " USER NAME",
+                          labelText: "E- mail or Phone",
                           // labelStyle: TextStyle(color: Colors.white),
                           border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(30))),
@@ -57,9 +57,9 @@ class _LoginScreenState extends State<LoginScreen> {
                     TextFormField(
                       controller: passwordcontroller,
                       decoration: InputDecoration(
-                          hintText: "PASSWORD",
+                          hintText: "Password",
                           // hintStyle: TextStyle(color: Colors.white),
-                          labelText: "PASSWORD",
+                          labelText: "Password",
                           // labelStyle: TextStyle(color: Colors.white),
                           border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(30))),

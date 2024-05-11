@@ -46,8 +46,8 @@ class _RegisterationScreenState extends State<RegisterationScreen> {
                       TextFormField(
                         controller: nameController,
                         decoration: InputDecoration(
-                            hintText: "  NAME",
-                            labelText: " USER NAME",
+                            hintText: "Username",
+                            labelText: "E-mail or Phone",
                             border: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(30))),
                       ),
@@ -57,8 +57,8 @@ class _RegisterationScreenState extends State<RegisterationScreen> {
                       TextFormField(
                         controller: passwordcontroller,
                         decoration: InputDecoration(
-                            hintText: "PASSWORD",
-                            labelText: "PASSWORD",
+                            hintText: "Password",
+                            labelText: "Password",
                             border: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(30))),
                       ),
