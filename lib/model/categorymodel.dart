@@ -1,32 +1,32 @@
-class Category {
+class CategoryModel {
   final String title;
   final String image;
 
-  Category({
+  CategoryModel({
     required this.title,
     required this.image,
   });
 }
 
-final List<Category> categoriesList = [
-  Category(
+final List<CategoryModel> categoriesList = [
+  CategoryModel(
     title: "All",
     image: "",
   ),
-  Category(title: "data", image: ""),
-  Category(
+  CategoryModel(title: "data", image: ""),
+  CategoryModel(
     title: "data",
     image: "",
   ),
-  Category(
+  CategoryModel(
     title: "data",
     image: "",
   ),
-  Category(
+  CategoryModel(
     title: "data",
     image: "",
   ),
-  Category(
+  CategoryModel(
     title: "data",
     image: "",
   ),

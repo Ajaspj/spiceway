@@ -6,7 +6,7 @@ import 'package:spiceway/model/productmodel.dart';
 import 'package:spiceway/view/detailsscreen.dart/details.dart';
 
 class ProductCard extends StatelessWidget {
-  final Product product;
+  final ProductModel product;
   const ProductCard({super.key, required this.product});
 
   @override
@@ -56,7 +56,7 @@ class ProductCard extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     Text(
-                      "\$${product.price}",
+                      "\₹${product.price}",
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 17,

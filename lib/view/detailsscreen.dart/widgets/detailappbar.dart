@@ -3,7 +3,7 @@ import 'package:spiceway/controller/favcontroller.dart';
 import 'package:spiceway/model/productmodel.dart';
 
 class DetailAppBar extends StatelessWidget {
-  final Product product;
+  final ProductModel product;
   const DetailAppBar({super.key, required this.product});
 
   @override

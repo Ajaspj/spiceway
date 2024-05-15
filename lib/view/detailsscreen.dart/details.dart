@@ -7,7 +7,7 @@ import 'package:spiceway/view/detailsscreen.dart/widgets/detailappbar.dart';
 import 'package:spiceway/view/detailsscreen.dart/widgets/itemsdetails.dart';
 
 class DetailScreen extends StatefulWidget {
-  final Product product;
+  final ProductModel product;
   const DetailScreen({super.key, required this.product});
 
   @override
@@ -33,15 +33,7 @@ class _DetailScreenState extends State<DetailScreen> {
             DetailAppBar(
               product: widget.product,
             ),
-            // for detail image slider
-            // MyImageSlider(
-            //   image: widget.product.image,
-            //   onChange: (index) {
-            //     setState(() {
-            //       currentImage = index;
-            //     });
-            //   },
-            // ),
+
             const SizedBox(height: 10),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,

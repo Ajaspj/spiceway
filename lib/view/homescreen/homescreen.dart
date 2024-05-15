@@ -19,7 +19,7 @@ class _HomeScreenState extends State<HomeScreen> {
   int selectedIndex = 0;
   @override
   Widget build(BuildContext context) {
-    List<List<Product>> selectcategories = [
+    List<List<ProductModel>> selectcategories = [
       all,
       shoes,
       beauty,

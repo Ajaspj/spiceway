@@ -3,7 +3,7 @@ import 'package:spiceway/constants/colorconstants.dart/colorconstants.dart';
 import 'package:spiceway/model/productmodel.dart';
 
 class ItemsDetails extends StatelessWidget {
-  final Product product;
+  final ProductModel product;
   const ItemsDetails({super.key, required this.product});
 
   @override

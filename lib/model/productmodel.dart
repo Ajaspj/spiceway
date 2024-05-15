@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class Product {
+class ProductModel {
   final String title;
   final String description;
   final String image;
@@ -12,7 +12,7 @@ class Product {
   final double rate;
   int quantity;
 
-  Product(
+  ProductModel(
       {required this.title,
       required this.review,
       required this.description,
@@ -25,8 +25,8 @@ class Product {
       required this.quantity});
 }
 
-final List<Product> all = [
-  Product(
+final List<ProductModel> all = [
+  ProductModel(
     title: "Wireless Headphones",
     description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Donec massa sapien faucibus et molestie ac feugiat. In massa tempor nec feugiat nisl. Libero id faucibus nisl tincidunt.",
@@ -43,7 +43,7 @@ final List<Product> all = [
     rate: 4.8,
     quantity: 1,
   ),
-  Product(
+  ProductModel(
     title: "Woman Sweter",
     description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Donec massa sapien faucibus et molestie ac feugiat. In massa tempor nec feugiat nisl. Libero id faucibus nisl tincidunt.",
@@ -60,7 +60,7 @@ final List<Product> all = [
     rate: 4.5,
     quantity: 1,
   ),
-  Product(
+  ProductModel(
     title: "Smart Watch",
     description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Donec massa sapien faucibus et molestie ac feugiat. In massa tempor nec feugiat nisl. Libero id faucibus nisl tincidunt.",
@@ -77,7 +77,7 @@ final List<Product> all = [
     rate: 4.0,
     quantity: 1,
   ),
-  Product(
+  ProductModel(
     title: "Mens Jacket",
     description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Donec massa sapien faucibus et molestie ac feugiat. In massa tempor nec feugiat nisl. Libero id faucibus nisl tincidunt.",
@@ -94,7 +94,7 @@ final List<Product> all = [
     rate: 5.0,
     quantity: 1,
   ),
-  Product(
+  ProductModel(
     title: "Watch",
     description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Donec massa sapien faucibus et molestie ac feugiat. In massa tempor nec feugiat nisl. Libero id faucibus nisl tincidunt.",
@@ -111,7 +111,7 @@ final List<Product> all = [
     rate: 5.0,
     quantity: 1,
   ),
-  Product(
+  ProductModel(
     title: "Air Jordan",
     description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Donec massa sapien faucibus et molestie ac feugiat. In massa tempor nec feugiat nisl. Libero id faucibus nisl tincidunt.",
@@ -128,7 +128,7 @@ final List<Product> all = [
     rate: 5.0,
     quantity: 1,
   ),
-  Product(
+  ProductModel(
     title: "Super Perfume",
     description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Donec massa sapien faucibus et molestie ac feugiat. In massa tempor nec feugiat nisl. Libero id faucibus nisl tincidunt.",
@@ -145,7 +145,7 @@ final List<Product> all = [
     rate: 4.7,
     quantity: 1,
   ),
-  Product(
+  ProductModel(
     title: "Wedding Ring",
     description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Donec massa sapien faucibus et molestie ac feugiat. In massa tempor nec feugiat nisl. Libero id faucibus nisl tincidunt.",
@@ -162,7 +162,7 @@ final List<Product> all = [
     rate: 4.5,
     quantity: 1,
   ),
-  Product(
+  ProductModel(
     title: "  Pants",
     description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Donec massa sapien faucibus et molestie ac feugiat. In massa tempor nec feugiat nisl. Libero id faucibus nisl tincidunt.",
@@ -181,8 +181,8 @@ final List<Product> all = [
   ),
 ];
 
-final List<Product> shoes = [
-  Product(
+final List<ProductModel> shoes = [
+  ProductModel(
     title: "Air Jordan",
     description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Donec massa sapien faucibus et molestie ac feugiat. In massa tempor nec feugiat nisl. Libero id faucibus nisl tincidunt.",
@@ -199,7 +199,7 @@ final List<Product> shoes = [
     rate: 5.0,
     quantity: 1,
   ),
-  Product(
+  ProductModel(
     title: "Vans Old Skool",
     description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Donec massa sapien faucibus et molestie ac feugiat. In massa tempor nec feugiat nisl. Libero id faucibus nisl tincidunt.",
@@ -216,7 +216,7 @@ final List<Product> shoes = [
     rate: 5.0,
     quantity: 1,
   ),
-  Product(
+  ProductModel(
     title: "Women-Shoes",
     description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Donec massa sapien faucibus et molestie ac feugiat. In massa tempor nec feugiat nisl. Libero id faucibus nisl tincidunt.",
@@ -233,7 +233,7 @@ final List<Product> shoes = [
     rate: 4.8,
     quantity: 1,
   ),
-  Product(
+  ProductModel(
     title: "Sports Shoes",
     description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Donec massa sapien faucibus et molestie ac feugiat. In massa tempor nec feugiat nisl. Libero id faucibus nisl tincidunt.",
@@ -250,7 +250,7 @@ final List<Product> shoes = [
     rate: 3.0,
     quantity: 1,
   ),
-  Product(
+  ProductModel(
     title: "White Sneaker",
     description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Donec massa sapien faucibus et molestie ac feugiat. In massa tempor nec feugiat nisl. Libero id faucibus nisl tincidunt.",
@@ -269,8 +269,8 @@ final List<Product> shoes = [
   ),
 ];
 
-final List<Product> beauty = [
-  Product(
+final List<ProductModel> beauty = [
+  ProductModel(
     title: "Face Care Product",
     description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Donec massa sapien faucibus et molestie ac feugiat. In massa tempor nec feugiat nisl. Libero id faucibus nisl tincidunt.",
@@ -287,7 +287,7 @@ final List<Product> beauty = [
     rate: 4.0,
     quantity: 1,
   ),
-  Product(
+  ProductModel(
     title: "Super Perfume",
     description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Donec massa sapien faucibus et molestie ac feugiat. In massa tempor nec feugiat nisl. Libero id faucibus nisl tincidunt.",
@@ -304,7 +304,7 @@ final List<Product> beauty = [
     rate: 4.7,
     quantity: 1,
   ),
-  Product(
+  ProductModel(
     title: "Skin-Care Product",
     description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Donec massa sapien faucibus et molestie ac feugiat. In massa tempor nec feugiat nisl. Libero id faucibus nisl tincidunt.",
@@ -323,8 +323,8 @@ final List<Product> beauty = [
   ),
 ];
 
-final List<Product> womenFashion = [
-  Product(
+final List<ProductModel> womenFashion = [
+  ProductModel(
     title: " Women Kurta",
     description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Donec massa sapien faucibus et molestie ac feugiat. In massa tempor nec feugiat nisl. Libero id faucibus nisl tincidunt.",
@@ -341,7 +341,7 @@ final List<Product> womenFashion = [
     rate: 5.0,
     quantity: 1,
   ),
-  Product(
+  ProductModel(
     title: "Mens Jacket",
     description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Donec massa sapien faucibus et molestie ac feugiat. In massa tempor nec feugiat nisl. Libero id faucibus nisl tincidunt.",
@@ -358,7 +358,7 @@ final List<Product> womenFashion = [
     rate: 4.0,
     quantity: 1,
   ),
-  Product(
+  ProductModel(
     title: "T-Shert",
     description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Donec massa sapien faucibus et molestie ac feugiat. In massa tempor nec feugiat nisl. Libero id faucibus nisl tincidunt.",
@@ -375,7 +375,7 @@ final List<Product> womenFashion = [
     rate: 5.0,
     quantity: 1,
   ),
-  Product(
+  ProductModel(
     title: "  Pants",
     description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Donec massa sapien faucibus et molestie ac feugiat. In massa tempor nec feugiat nisl. Libero id faucibus nisl tincidunt.",
@@ -393,8 +393,8 @@ final List<Product> womenFashion = [
     quantity: 1,
   ),
 ];
-final List<Product> jewelry = [
-  Product(
+final List<ProductModel> jewelry = [
+  ProductModel(
     title: "Earrings",
     description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Donec massa sapien faucibus et molestie ac feugiat. In massa tempor nec feugiat nisl. Libero id faucibus nisl tincidunt.",
@@ -411,7 +411,7 @@ final List<Product> jewelry = [
     rate: 4.5,
     quantity: 1,
   ),
-  Product(
+  ProductModel(
     title: "Jewelry-Box",
     description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Donec massa sapien faucibus et molestie ac feugiat. In massa tempor nec feugiat nisl. Libero id faucibus nisl tincidunt.",
@@ -428,7 +428,7 @@ final List<Product> jewelry = [
     rate: 5.0,
     quantity: 1,
   ),
-  Product(
+  ProductModel(
     title: "Wedding Ring",
     description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Donec massa sapien faucibus et molestie ac feugiat. In massa tempor nec feugiat nisl. Libero id faucibus nisl tincidunt.",
@@ -445,7 +445,7 @@ final List<Product> jewelry = [
     rate: 4.5,
     quantity: 1,
   ),
-  Product(
+  ProductModel(
     title: "Necklace-Jewellery",
     description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Donec massa sapien faucibus et molestie ac feugiat. In massa tempor nec feugiat nisl. Libero id faucibus nisl tincidunt.",
@@ -463,8 +463,8 @@ final List<Product> jewelry = [
     quantity: 1,
   ),
 ];
-final List<Product> menFashion = [
-  Product(
+final List<ProductModel> menFashion = [
+  ProductModel(
     title: "Man Jacket",
     description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Donec massa sapien faucibus et molestie ac feugiat. In massa tempor nec feugiat nisl. Libero id faucibus nisl tincidunt.",
@@ -481,7 +481,7 @@ final List<Product> menFashion = [
     rate: 5.0,
     quantity: 1,
   ),
-  Product(
+  ProductModel(
     title: "Men Pants",
     description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Donec massa sapien faucibus et molestie ac feugiat. In massa tempor nec feugiat nisl. Libero id faucibus nisl tincidunt.",
@@ -498,7 +498,7 @@ final List<Product> menFashion = [
     rate: 4.5,
     quantity: 1,
   ),
-  Product(
+  ProductModel(
     title: "Men Shert",
     description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Donec massa sapien faucibus et molestie ac feugiat. In massa tempor nec feugiat nisl. Libero id faucibus nisl tincidunt.",
@@ -515,7 +515,7 @@ final List<Product> menFashion = [
     rate: 3.0,
     quantity: 1,
   ),
-  Product(
+  ProductModel(
     title: "T-Shirt",
     description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Donec massa sapien faucibus et molestie ac feugiat. In massa tempor nec feugiat nisl. Libero id faucibus nisl tincidunt.",
@@ -532,7 +532,7 @@ final List<Product> menFashion = [
     rate: 5.0,
     quantity: 1,
   ),
-  Product(
+  ProductModel(
     title: "Watch",
     description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Donec massa sapien faucibus et molestie ac feugiat. In massa tempor nec feugiat nisl. Libero id faucibus nisl tincidunt.",

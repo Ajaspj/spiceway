@@ -4,7 +4,7 @@ import 'package:spiceway/controller/cartcontroller.dart';
 import 'package:spiceway/model/productmodel.dart';
 
 class AddToCart extends StatefulWidget {
-  final Product product;
+  final ProductModel product;
   const AddToCart({super.key, required this.product});
 
   @override

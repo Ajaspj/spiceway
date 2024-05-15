@@ -3,11 +3,11 @@ import 'package:provider/provider.dart';
 import 'package:spiceway/model/productmodel.dart';
 
 class Cartcontroller extends ChangeNotifier {
-  final List<Product> _cart = [];
-  List<Product> get cart => _cart;
-  void toggleFavorite(Product product) {
+  final List<ProductModel> _cart = [];
+  List<ProductModel> get cart => _cart;
+  void toggleFavorite(ProductModel product) {
     if (_cart.contains(product)) {
-      for (Product element in _cart) {
+      for (ProductModel element in _cart) {
         element.quantity++;
       }
     } else {
@@ -31,7 +31,7 @@ class Cartcontroller extends ChangeNotifier {
 
   totalPrice() {
     double total1 = 0.0;
-    for (Product element in _cart) {
+    for (ProductModel element in _cart) {
       total1 += element.price * element.quantity;
     }
     return total1;
