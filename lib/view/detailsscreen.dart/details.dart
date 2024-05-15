@@ -4,7 +4,6 @@ import 'package:spiceway/model/productmodel.dart';
 import 'package:spiceway/view/detailsscreen.dart/widgets/addtocart.dart';
 import 'package:spiceway/view/detailsscreen.dart/widgets/description.dart';
 import 'package:spiceway/view/detailsscreen.dart/widgets/detailappbar.dart';
-import 'package:spiceway/view/detailsscreen.dart/widgets/imageslider.dart';
 import 'package:spiceway/view/detailsscreen.dart/widgets/itemsdetails.dart';
 
 class DetailScreen extends StatefulWidget {
@@ -35,23 +34,20 @@ class _DetailScreenState extends State<DetailScreen> {
               product: widget.product,
             ),
             // for detail image slider
-            MyImageSlider(
-              image: widget.product.image,
-              onChange: (index) {
-                setState(() {
-                  currentImage = index;
-                });
-              },
-            ),
+            // MyImageSlider(
+            //   image: widget.product.image,
+            //   onChange: (index) {
+            //     setState(() {
+            //       currentImage = index;
+            //     });
+            //   },
+            // ),
             const SizedBox(height: 10),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: List.generate(
                 5,
-                (index) => AnimatedContainer(
-                  duration: const Duration(microseconds: 300),
-                  width: currentImage == index ? 15 : 8,
-                  height: 8,
+                (index) => Container(
                   margin: const EdgeInsets.only(right: 3),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
@@ -101,8 +97,7 @@ class _DetailScreenState extends State<DetailScreen> {
                             currentColor = index;
                           });
                         },
-                        child: AnimatedContainer(
-                          duration: const Duration(milliseconds: 300),
+                        child: Container(
                           width: 40,
                           height: 40,
                           decoration: BoxDecoration(

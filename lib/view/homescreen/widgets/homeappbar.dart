@@ -11,17 +11,10 @@ class CustomAppBar extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        IconButton(
-          style: IconButton.styleFrom(
-            backgroundColor: ColorConstants.primaryGreen,
-            padding: const EdgeInsets.all(15),
-          ),
-          onPressed: () {},
-          icon: Image.asset(
-            "",
-            height: 20,
-          ),
-        ),
+        CircleAvatar(
+            backgroundImage: AssetImage(
+          "assets/images/spiceway logo.png",
+        )),
         IconButton(
           style: IconButton.styleFrom(
             backgroundColor: ColorConstants.primaryGreen,

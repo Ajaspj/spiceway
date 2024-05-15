@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:spiceway/constants/colorconstants.dart/colorconstants.dart';
+import 'package:spiceway/view/cartscreen/cartscreen.dart';
 
 class MySearchBAR extends StatelessWidget {
   const MySearchBAR({super.key});
@@ -35,10 +36,16 @@ class MySearchBAR extends StatelessWidget {
             color: Colors.grey,
           ),
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => CartScreen(),
+                  ));
+            },
             icon: const Icon(
-              Icons.tune,
-              color: Colors.grey,
+              Icons.shopping_cart,
+              color: ColorConstants.primaryBlack,
             ),
           ),
         ],

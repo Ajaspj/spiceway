@@ -13,7 +13,7 @@ class ItemsDetails extends StatelessWidget {
       children: [
         Text(
           product.title,
-          style: const TextStyle(
+          style: TextStyle(
             fontWeight: FontWeight.w800,
             fontSize: 25,
           ),
@@ -25,12 +25,12 @@ class ItemsDetails extends StatelessWidget {
               children: [
                 Text(
                   "\$${product.price}",
-                  style: const TextStyle(
+                  style: TextStyle(
                     fontWeight: FontWeight.w800,
                     fontSize: 25,
                   ),
                 ),
-                const SizedBox(height: 10),
+                SizedBox(height: 10),
                 // for rating
                 Row(
                   children: [
@@ -41,20 +41,20 @@ class ItemsDetails extends StatelessWidget {
                           borderRadius: BorderRadius.circular(15),
                           color: ColorConstants.primaryGreen),
                       alignment: Alignment.center,
-                      padding: const EdgeInsets.symmetric(horizontal: 5),
+                      padding: EdgeInsets.symmetric(horizontal: 5),
                       child: Row(
                         children: [
-                          const Icon(
+                          Icon(
                             Icons.star,
                             size: 15,
                             color: Colors.white,
                           ),
-                          const SizedBox(
+                          SizedBox(
                             width: 3,
                           ),
                           Text(
                             product.rate.toString(),
-                            style: const TextStyle(
+                            style: TextStyle(
                               fontWeight: FontWeight.bold,
                               color: Colors.white,
                               fontSize: 14,
@@ -63,10 +63,10 @@ class ItemsDetails extends StatelessWidget {
                         ],
                       ),
                     ),
-                    const SizedBox(width: 5),
+                    SizedBox(width: 5),
                     Text(
                       product.review,
-                      style: const TextStyle(
+                      style: TextStyle(
                         color: Colors.grey,
                         fontSize: 15,
                       ),
@@ -75,11 +75,11 @@ class ItemsDetails extends StatelessWidget {
                 )
               ],
             ),
-            const Spacer(),
+            Spacer(),
             Text.rich(
               TextSpan(
                 children: [
-                  const TextSpan(
+                  TextSpan(
                     text: "Seller: ",
                     style: TextStyle(fontSize: 16),
                   ),

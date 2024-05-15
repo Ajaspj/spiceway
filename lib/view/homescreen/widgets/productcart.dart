@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:spiceway/constants/colorconstants.dart/colorconstants.dart';
 import 'package:spiceway/controller/favcontroller.dart';
 import 'package:spiceway/model/productmodel.dart';
+
 import 'package:spiceway/view/detailsscreen.dart/details.dart';
 
 class ProductCard extends StatelessWidget {
@@ -30,36 +31,33 @@ class ProductCard extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const SizedBox(height: 5),
+                SizedBox(height: 5),
                 Center(
-                  child: Hero(
-                    tag: product.image,
-                    child: Image.asset(
-                      product.image,
-                      width: 150,
-                      height: 150,
-                      fit: BoxFit.cover,
-                    ),
+                  child: Image.asset(
+                    product.image,
+                    width: 150,
+                    height: 150,
+                    fit: BoxFit.cover,
                   ),
                 ),
-                const SizedBox(height: 10),
+                SizedBox(height: 10),
                 Padding(
                   padding: const EdgeInsets.only(left: 10),
                   child: Text(
                     product.title,
-                    style: const TextStyle(
+                    style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 16,
                     ),
                   ),
                 ),
-                const SizedBox(height: 10),
+                SizedBox(height: 10),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     Text(
                       "\$${product.price}",
-                      style: const TextStyle(
+                      style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 17,
                       ),

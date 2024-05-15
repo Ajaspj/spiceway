@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:spiceway/constants/colorconstants.dart/colorconstants.dart';
 import 'package:spiceway/view/loginscreen/loginscreen.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -24,7 +25,7 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: ColorConstants.primaryGreen,
       body: Center(
         child: Text(
           "WELCOME",

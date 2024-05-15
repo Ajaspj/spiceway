@@ -2,6 +2,8 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:spiceway/controller/cartcontroller.dart';
+import 'package:spiceway/controller/favcontroller.dart';
 import 'package:spiceway/controller/logincontroller.dart';
 import 'package:spiceway/controller/registrationcontroller.dart';
 import 'package:spiceway/firebase_options.dart';
@@ -28,7 +30,13 @@ class MyApp extends StatelessWidget {
         ),
         ChangeNotifierProvider(
           create: (context) => LoginScreenController(),
-        )
+        ),
+        ChangeNotifierProvider(
+          create: (context) => Cartcontroller(),
+        ),
+        ChangeNotifierProvider(
+          create: (context) => Favoritecontroller(),
+        ),
       ],
       child: MaterialApp(
         home: StreamBuilder(

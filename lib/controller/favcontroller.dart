@@ -3,19 +3,19 @@ import 'package:provider/provider.dart';
 import 'package:spiceway/model/productmodel.dart';
 
 class Favoritecontroller extends ChangeNotifier {
-  final List<Product> _favorites = [];
-  List<Product> get favorites => _favorites;
+  final List<Product> favorateslist = [];
+  List<Product> get favorites => favorateslist;
   void toggleFavorite(Product product) {
-    if (_favorites.contains(product)) {
-      _favorites.remove(product);
+    if (favorateslist.contains(product)) {
+      favorateslist.remove(product);
     } else {
-      _favorites.add(product);
+      favorateslist.add(product);
     }
     notifyListeners();
   }
 
   bool isExist(Product product) {
-    final isExist = _favorites.contains(product);
+    final isExist = favorateslist.contains(product);
     return isExist;
   }
 

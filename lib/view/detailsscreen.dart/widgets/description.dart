@@ -46,10 +46,10 @@ class Description extends StatelessWidget {
             ),
           ],
         ),
-        const SizedBox(height: 20),
+        SizedBox(height: 20),
         Text(
           description,
-          style: const TextStyle(
+          style: TextStyle(
             fontSize: 16,
             color: Colors.grey,
           ),
