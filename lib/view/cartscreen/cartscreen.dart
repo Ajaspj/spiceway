@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:spiceway/constants/colorconstants.dart/colorconstants.dart';
 import 'package:spiceway/controller/cartcontroller.dart';
+import 'package:spiceway/view/cartscreen/checkout.dart';
 
 class CartScreen extends StatefulWidget {
-  const CartScreen({super.key});
+  CartScreen({super.key});
 
   @override
   State<CartScreen> createState() => _CartScreenState();
@@ -33,36 +34,19 @@ class _CartScreenState extends State<CartScreen> {
     return Scaffold(
       // for total and check out
       backgroundColor: ColorConstants.primaryGreen,
+      bottomSheet: Checkoutscreen(),
+      appBar: AppBar(
+        backgroundColor: ColorConstants.primaryGreen,
+        title: Text(
+          "My Cart",
+          style: TextStyle(fontWeight: FontWeight.bold),
+        ),
+        centerTitle: true,
+      ),
 
       body: SafeArea(
         child: Column(
           children: [
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  IconButton(
-                    onPressed: () {
-                      Navigator.pop(context);
-                    },
-                    style: IconButton.styleFrom(
-                      backgroundColor: Colors.white,
-                      padding: const EdgeInsets.all(15),
-                    ),
-                    icon: const Icon(Icons.arrow_back_ios),
-                  ),
-                  const Text(
-                    "My Cart",
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 25,
-                    ),
-                  ),
-                  const SizedBox(),
-                ],
-              ),
-            ),
             Expanded(
               child: ListView.builder(
                 shrinkWrap: true,
@@ -72,14 +56,14 @@ class _CartScreenState extends State<CartScreen> {
                   return Stack(
                     children: [
                       Padding(
-                        padding: const EdgeInsets.all(15.0),
+                        padding: EdgeInsets.all(15.0),
                         child: Container(
                           width: double.infinity,
                           decoration: BoxDecoration(
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(20),
                           ),
-                          padding: const EdgeInsets.all(20),
+                          padding: EdgeInsets.all(20),
                           child: Row(
                             children: [
                               Container(
@@ -89,36 +73,36 @@ class _CartScreenState extends State<CartScreen> {
                                   color: ColorConstants.primaryGreen,
                                   borderRadius: BorderRadius.circular(20),
                                 ),
-                                padding: const EdgeInsets.all(10),
+                                padding: EdgeInsets.all(10),
                                 child: Image.asset(
                                   cartItems.image,
                                 ),
                               ),
-                              const SizedBox(width: 10),
+                              SizedBox(width: 10),
                               Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Text(
                                     cartItems.title,
-                                    style: const TextStyle(
+                                    style: TextStyle(
                                       fontSize: 16,
                                       color: Colors.black,
                                       fontWeight: FontWeight.bold,
                                     ),
                                   ),
-                                  const SizedBox(height: 5),
+                                  SizedBox(height: 5),
                                   Text(
                                     cartItems.category,
-                                    style: const TextStyle(
+                                    style: TextStyle(
                                       fontSize: 14,
                                       fontWeight: FontWeight.bold,
                                       color: Colors.grey,
                                     ),
                                   ),
-                                  const SizedBox(height: 8),
+                                  SizedBox(height: 8),
                                   Text(
-                                    "\$${cartItems.price}",
-                                    style: const TextStyle(
+                                    "\₹${cartItems.price}",
+                                    style: TextStyle(
                                       fontSize: 14,
                                       fontWeight: FontWeight.bold,
                                     ),
@@ -141,13 +125,13 @@ class _CartScreenState extends State<CartScreen> {
                                 finalList.removeAt(index);
                                 setState(() {});
                               },
-                              icon: const Icon(
+                              icon: Icon(
                                 Icons.delete,
                                 color: Colors.red,
                                 size: 20,
                               ),
                             ),
-                            const SizedBox(height: 10),
+                            SizedBox(height: 10),
                             Container(
                               height: 40,
                               decoration: BoxDecoration(
@@ -160,19 +144,19 @@ class _CartScreenState extends State<CartScreen> {
                               ),
                               child: Row(
                                 children: [
-                                  const SizedBox(width: 10),
+                                  SizedBox(width: 10),
                                   productQuantity(Icons.add, index),
-                                  const SizedBox(width: 10),
+                                  SizedBox(width: 10),
                                   Text(
                                     cartItems.quantity.toString(),
-                                    style: const TextStyle(
+                                    style: TextStyle(
                                       color: Colors.black,
                                       fontWeight: FontWeight.bold,
                                     ),
                                   ),
-                                  const SizedBox(width: 10),
+                                  SizedBox(width: 10),
                                   productQuantity(Icons.remove, index),
-                                  const SizedBox(width: 10),
+                                  SizedBox(width: 10),
                                 ],
                               ),
                             ),

@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:spiceway/constants/colorconstants.dart/colorconstants.dart';
 import 'package:spiceway/view/cartscreen/cartscreen.dart';
+import 'package:spiceway/view/favaritescreen/favaritescreen.dart';
 
-class MySearchBAR extends StatelessWidget {
-  const MySearchBAR({super.key});
+class searchBar extends StatelessWidget {
+  const searchBar({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -28,6 +29,19 @@ class MySearchBAR extends StatelessWidget {
             child: TextField(
               decoration: InputDecoration(
                   hintText: "Search...", border: InputBorder.none),
+            ),
+          ),
+          IconButton(
+            onPressed: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => Favoritescreen(),
+                  ));
+            },
+            icon: const Icon(
+              Icons.favorite,
+              color: ColorConstants.primaryBlack,
             ),
           ),
           Container(

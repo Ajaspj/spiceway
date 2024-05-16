@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:spiceway/constants/colorconstants.dart/colorconstants.dart';
 import 'package:spiceway/controller/logincontroller.dart';
+import 'package:spiceway/view/forgotscreen/forgotscreen.dart';
 import 'package:spiceway/view/homescreen/homescreen.dart';
 import 'package:spiceway/view/registrationscreen/registrationscreen.dart';
 
@@ -66,6 +67,20 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                   ],
                 )),
+            Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                TextButton(
+                    onPressed: () {
+                      Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => ForgotScreen(),
+                          ));
+                    },
+                    child: Text("Forgot password")),
+              ],
+            ),
             SizedBox(
               height: 20,
             ),

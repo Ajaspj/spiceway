@@ -6,16 +6,16 @@ import 'package:spiceway/model/productmodel.dart';
 import 'package:spiceway/view/homescreen/widgets/productcart.dart';
 
 import 'package:spiceway/view/homescreen/widgets/searchbar.dart';
+import 'package:spiceway/view/profilescreen/profilescreen.dart';
 
 class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
+  HomeScreen({super.key});
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  int currentSlider = 0;
   int selectedIndex = 0;
   @override
   Widget build(BuildContext context) {
@@ -37,6 +37,19 @@ class _HomeScreenState extends State<HomeScreen> {
               fontWeight: FontWeight.bold,
               fontStyle: FontStyle.italic),
         ),
+        actions: [
+          IconButton(
+            onPressed: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => Profilescreen()));
+            },
+            icon: Icon(
+              size: 38,
+              Icons.account_circle,
+              color: ColorConstants.primaryBlack,
+            ),
+          ),
+        ],
       ),
       backgroundColor: Colors.white,
       body: SingleChildScrollView(
@@ -46,16 +59,16 @@ class _HomeScreenState extends State<HomeScreen> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               // for search bar
-              MySearchBAR(),
+              searchBar(),
               SizedBox(height: 20),
 
-              const SizedBox(height: 20),
+              SizedBox(height: 20),
               // for category selection
               categoryItems(),
 
-              const SizedBox(height: 20),
+              SizedBox(height: 20),
               if (selectedIndex == 0)
-                const Row(
+                Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
@@ -76,7 +89,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   ],
                 ),
               // for shopping items
-              const SizedBox(height: 10),
+              SizedBox(height: 10),
               GridView.builder(
                 padding: EdgeInsets.zero,
                 physics: NeverScrollableScrollPhysics(),
@@ -114,7 +127,7 @@ class _HomeScreenState extends State<HomeScreen> {
               });
             },
             child: Container(
-              padding: const EdgeInsets.all(5),
+              padding: EdgeInsets.all(5),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(15),
                 color: selectedIndex == index
@@ -133,10 +146,10 @@ class _HomeScreenState extends State<HomeScreen> {
                           fit: BoxFit.cover),
                     ),
                   ),
-                  const SizedBox(height: 5),
+                  SizedBox(height: 5),
                   Text(
                     categoriesList[index].title,
-                    style: const TextStyle(
+                    style: TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.bold,
                     ),
