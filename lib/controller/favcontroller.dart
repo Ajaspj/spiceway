@@ -19,6 +19,14 @@ class Favoritecontroller extends ChangeNotifier {
     return isExist;
   }
 
+  totalPrice() {
+    double total1 = 0.0;
+    for (ProductModel element in favorateslist) {
+      total1 += element.price * element.quantity;
+    }
+    return total1;
+  }
+
   static Favoritecontroller of(
     BuildContext context, {
     bool listen = true,

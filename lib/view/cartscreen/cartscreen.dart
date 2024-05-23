@@ -145,7 +145,7 @@ class _CartScreenState extends State<CartScreen> {
                               child: Row(
                                 children: [
                                   SizedBox(width: 10),
-                                  productQuantity(Icons.add, index),
+                                  productQuantity(Icons.remove, index),
                                   SizedBox(width: 10),
                                   Text(
                                     cartItems.quantity.toString(),
@@ -155,7 +155,7 @@ class _CartScreenState extends State<CartScreen> {
                                     ),
                                   ),
                                   SizedBox(width: 10),
-                                  productQuantity(Icons.remove, index),
+                                  productQuantity(Icons.add, index),
                                   SizedBox(width: 10),
                                 ],
                               ),

@@ -1,5 +1,8 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:spiceway/constants/colorconstants.dart/colorconstants.dart';
+import 'package:spiceway/view/loginscreen/loginscreen.dart';
 
 class Profilescreen extends StatelessWidget {
   const Profilescreen({super.key});
@@ -65,19 +68,32 @@ class Profilescreen extends StatelessWidget {
                                 Row(
                                   children: [
                                     SizedBox(width: 8),
-                                    Container(
-                                      decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(20),
-                                        color: ColorConstants.primaryGreen,
-                                      ),
-                                      padding: EdgeInsets.symmetric(
-                                          vertical: 8, horizontal: 12),
-                                      child: Text(
-                                        "Follow",
-                                        style: TextStyle(
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: 16,
-                                          color: Colors.white,
+                                    GestureDetector(
+                                      onTap: () async {
+                                        await FirebaseAuth.instance.signOut();
+                                        Navigator.pushAndRemoveUntil(
+                                            context,
+                                            MaterialPageRoute(
+                                              builder: (context) =>
+                                                  LoginScreen(),
+                                            ),
+                                            (route) => false);
+                                      },
+                                      child: Container(
+                                        decoration: BoxDecoration(
+                                          borderRadius:
+                                              BorderRadius.circular(20),
+                                          color: ColorConstants.primaryGreen,
+                                        ),
+                                        padding: EdgeInsets.symmetric(
+                                            vertical: 8, horizontal: 12),
+                                        child: Text(
+                                          "logout",
+                                          style: TextStyle(
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: 16,
+                                            color: Colors.white,
+                                          ),
                                         ),
                                       ),
                                     )

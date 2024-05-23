@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:spiceway/constants/colorconstants.dart/colorconstants.dart';
-import 'package:spiceway/view/welcomescreen/welcome.dart';
+import 'package:spiceway/view/homescreen/homescreen.dart';
+import 'package:spiceway/view/loginscreen/loginscreen.dart';
 
 class SplashScreen extends StatefulWidget {
-  const SplashScreen({super.key});
+  SplashScreen({super.key, this.islogged = false});
+  final bool islogged;
 
   @override
   State<SplashScreen> createState() => _SplashScreenState();
@@ -13,11 +15,19 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     Future.delayed(Duration(seconds: 5)).then((value) {
-      Navigator.pushReplacement(
-          context,
-          MaterialPageRoute(
-            builder: (context) => Welcomescreen(),
-          ));
+      if (widget.islogged == true) {
+        Navigator.pushReplacement(
+            context,
+            MaterialPageRoute(
+              builder: (context) => HomeScreen(),
+            ));
+      } else {
+        Navigator.pushReplacement(
+            context,
+            MaterialPageRoute(
+              builder: (context) => LoginScreen(),
+            ));
+      }
     });
     super.initState();
   }

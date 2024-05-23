@@ -14,11 +14,12 @@ class _WelcomescreenState extends State<Welcomescreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: ColorConstants.primaryGreen,
       body: IntroductionScreen(
         scrollPhysics: BouncingScrollPhysics(),
         pages: [
           PageViewModel(
+              decoration:
+                  PageDecoration(pageColor: ColorConstants.primaryGreen),
               titleWidget: Text(
                 "Get started with adding some spices to your life",
                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 28),
@@ -32,6 +33,8 @@ class _WelcomescreenState extends State<Welcomescreen> {
                 "https://images.alphacoders.com/110/1103539.jpg",
               )),
           PageViewModel(
+              decoration:
+                  PageDecoration(pageColor: ColorConstants.primaryGreen),
               titleWidget: Text("Grab your essential spice right away..",
                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 28),
                   textAlign: TextAlign.left),
@@ -43,6 +46,8 @@ class _WelcomescreenState extends State<Welcomescreen> {
               image: Image.network(
                   "https://c4.wallpaperflare.com/wallpaper/100/468/880/bowl-spices-bay-leaf-black-pepper-wallpaper-preview.jpg")),
           PageViewModel(
+              decoration:
+                  PageDecoration(pageColor: ColorConstants.primaryGreen),
               titleWidget: Text("Welcome",
                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 28)),
               bodyWidget: Text(
@@ -74,6 +79,7 @@ class _WelcomescreenState extends State<Welcomescreen> {
               (route) => false);
         },
         dotsDecorator: DotsDecorator(
+            color: ColorConstants.primaryBlack,
             size: Size.square(10),
             activeSize: Size(20, 10),
             activeShape: RoundedRectangleBorder(

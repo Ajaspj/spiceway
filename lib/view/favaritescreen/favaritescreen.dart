@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:spiceway/constants/colorconstants.dart/colorconstants.dart';
 import 'package:spiceway/controller/favcontroller.dart';
+import 'package:spiceway/view/favaritescreen/favcheckout.dart';
 
 class Favoritescreen extends StatefulWidget {
   Favoritescreen({super.key});
@@ -16,6 +17,7 @@ class _FavoritescreenState extends State<Favoritescreen> {
     final finalList = provider.favorites;
     return Scaffold(
       backgroundColor: ColorConstants.primaryGreen,
+      bottomSheet: favoritecheckoutscreen(),
       appBar: AppBar(
         backgroundColor: ColorConstants.primaryGreen,
         title: Text(
@@ -78,7 +80,7 @@ class _FavoritescreenState extends State<Favoritescreen> {
                                 ),
                                 SizedBox(height: 8),
                                 Text(
-                                  "\$${favoritItems.price}",
+                                  "\₹${favoritItems.price}",
                                   style: TextStyle(
                                     fontSize: 15,
                                     fontWeight: FontWeight.bold,
@@ -106,7 +108,6 @@ class _FavoritescreenState extends State<Favoritescreen> {
                             child:
                                 Icon(Icons.delete, color: Colors.red, size: 25),
                           ),
-                          GestureDetector()
                         ],
                       ),
                     )
