@@ -113,7 +113,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         } else {
                           ScaffoldMessenger.of(context).showSnackBar(SnackBar(
                               backgroundColor: Colors.red,
-                              content: Text("Registration Failed")));
+                              content: Text("Login Failed")));
                         }
                       });
                     } else {

@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:spiceway/constants/colorconstants.dart/colorconstants.dart';
 import 'package:spiceway/view/cartscreen/cartscreen.dart';
-import 'package:spiceway/view/favaritescreen/favaritescreen.dart';
+
+import 'package:spiceway/view/favouritescreen/favoritescreen.dart';
 
 class searchBar extends StatelessWidget {
   const searchBar({super.key});

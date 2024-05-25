@@ -49,7 +49,7 @@ class MyApp extends StatelessWidget {
               );
             } else {
               return SplashScreen(
-                islogged: false,
+                islogged: true,
               );
             }
           },

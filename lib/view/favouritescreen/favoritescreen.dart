@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:spiceway/constants/colorconstants.dart/colorconstants.dart';
 import 'package:spiceway/controller/favcontroller.dart';
-import 'package:spiceway/view/favaritescreen/favcheckout.dart';
+
+import 'package:spiceway/view/favouritescreen/favcheckout.dart';
 
 class Favoritescreen extends StatefulWidget {
   Favoritescreen({super.key});
@@ -70,14 +71,6 @@ class _FavoritescreenState extends State<Favoritescreen> {
                                   ),
                                 ),
                                 SizedBox(height: 5),
-                                Text(
-                                  favoritItems.category,
-                                  style: TextStyle(
-                                    fontSize: 14,
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.grey,
-                                  ),
-                                ),
                                 SizedBox(height: 8),
                                 Text(
                                   "\₹${favoritItems.price}",

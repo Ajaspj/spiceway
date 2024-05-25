@@ -62,20 +62,6 @@ class ProductCard extends StatelessWidget {
                         fontSize: 17,
                       ),
                     ),
-                    Row(
-                      children: List.generate(
-                        product.colors.length,
-                        (index) => Container(
-                          width: 18,
-                          height: 18,
-                          margin: const EdgeInsets.only(right: 4),
-                          decoration: BoxDecoration(
-                            color: product.colors[index],
-                            shape: BoxShape.circle,
-                          ),
-                        ),
-                      ),
-                    )
                   ],
                 )
               ],
@@ -87,7 +73,7 @@ class ProductCard extends StatelessWidget {
             child: Container(
               height: 40,
               width: 40,
-              decoration: const BoxDecoration(
+              decoration: BoxDecoration(
                 color: ColorConstants.primaryGreen,
                 borderRadius: BorderRadius.only(
                   topRight: Radius.circular(20),

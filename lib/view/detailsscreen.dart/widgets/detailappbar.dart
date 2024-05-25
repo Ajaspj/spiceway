@@ -30,9 +30,9 @@ class DetailAppBar extends StatelessWidget {
               padding: EdgeInsets.all(15),
             ),
             onPressed: () {},
-            icon: const Icon(Icons.share_outlined),
+            icon: Icon(Icons.share_outlined),
           ),
-          const SizedBox(width: 10),
+          SizedBox(width: 10),
           IconButton(
             style: IconButton.styleFrom(
               backgroundColor: Colors.white,

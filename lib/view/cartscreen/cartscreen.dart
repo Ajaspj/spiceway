@@ -91,14 +91,6 @@ class _CartScreenState extends State<CartScreen> {
                                     ),
                                   ),
                                   SizedBox(height: 5),
-                                  Text(
-                                    cartItems.category,
-                                    style: TextStyle(
-                                      fontSize: 14,
-                                      fontWeight: FontWeight.bold,
-                                      color: Colors.grey,
-                                    ),
-                                  ),
                                   SizedBox(height: 8),
                                   Text(
                                     "\₹${cartItems.price}",
