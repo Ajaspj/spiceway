@@ -62,6 +62,16 @@ class ProductCard extends StatelessWidget {
                         fontSize: 17,
                       ),
                     ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    Text(
+                      "${product.quantity} \kg",
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 17,
+                      ),
+                    ),
                   ],
                 )
               ],

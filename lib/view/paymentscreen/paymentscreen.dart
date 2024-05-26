@@ -1,8 +1,6 @@
-// import 'dart:async';
-
 // import 'package:flutter/material.dart';
-// import 'package:flutter/widgets.dart';
-// import 'package:upi_india/upi_india.dart';
+// import 'package:spiceway/constants/colorconstants.dart/colorconstants.dart';
+// import 'package:stripe_payment/stripe_payment.dart';
 
 // class Paymentscreen extends StatefulWidget {
 //   const Paymentscreen({super.key});
@@ -12,42 +10,63 @@
 // }
 
 // class _PaymentscreenState extends State<Paymentscreen> {
-//   Future<UpiResponse>? transaction;
-//   final UpiIndia _upiIndia = UpiIndia();
-//   List<UpiApp>? apps;
-//   TextStyle header = TextStyle(
-//     fontSize: 18,
-//   );
-//   @override
-//   void initstate() {
-//     _upiIndia.getAllUpiApps(mandatoryTransactionId: false).then((value) {
-//       setState(() {
-//         apps = value;
-//       });
-//     }).catchError((e) {
-//       print(e);
-//       apps = [];
-//     });
+//   final _scaffoldKey = GlobalKey<ScaffoldMessengerState>();
+//   void initState() {
 //     super.initState();
-//   }
-//  Future<UpiResponse> initiatetransaction(UpiApp app) async{...}
-//  Widget displayupiapps(){
-//   if(apps == null){
-//     return Center(
-//       child: CircularProgressIndicator()
+
+//     StripePayment.setOptions(
+//       StripeOptions(
+//         publishableKey: "your_publishable_key",
+//         merchantId: "Test",
+//         androidPayMode: 'test',
+//       ),
 //     );
-//   }else if(apps!.isEmpty){
-//     return Center(
-//       child: Text("no apps found for transaction"),
-//     );
-//   }else{
-//     return
 //   }
-//  }
 
+//   void _startPayment() {
+//     StripePayment.paymentRequestWithCardForm(
+//       CardFormPaymentRequest(),
+//     ).then((paymentMethod) {
+//       _scaffoldKey.currentState?.showSnackBar(SnackBar(
+//         content: Text('Received ${paymentMethod.id}'),
+//       ));
+//       // Send the paymentMethod.id to your server to process the payment
+//     }).catchError((e) {
+//       print('Error: $e');
+//       _scaffoldKey.currentState?.showSnackBar(SnackBar(
+//         content: Text('Payment failed: $e'),
+//       ));
+//     });
+//   }
 
-
+//   @override
 //   Widget build(BuildContext context) {
-//     return const Placeholder();
+//     return Scaffold(
+//       backgroundColor: ColorConstants.primaryGreen,
+//       key: _scaffoldKey,
+//       appBar: AppBar(
+//         backgroundColor: ColorConstants.primaryGreen,
+//         title: Text(
+//           'Payment',
+//           style: TextStyle(
+//             color: Colors.black,
+//             fontWeight: FontWeight.bold,
+//           ),
+//         ),
+//       ),
+//       body: Center(
+//         child: ElevatedButton(
+//           onPressed: _startPayment,
+//           child: Text(
+//             'Pay with Card',
+//             style: TextStyle(
+//               fontSize: 16,
+//               color: Colors.black,
+//               fontWeight: FontWeight.bold,
+//             ),
+//           ),
+//         ),
+//       ),
+//     );
 //   }
 // }

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:spiceway/constants/colorconstants.dart/colorconstants.dart';
 import 'package:spiceway/controller/favcontroller.dart';
+import 'package:spiceway/view/paymentscreen/paymentscreen.dart';
 
 class favoritecheckoutscreen extends StatelessWidget {
   favoritecheckoutscreen({
@@ -46,7 +47,13 @@ class favoritecheckoutscreen extends StatelessWidget {
           Divider(),
           SizedBox(height: 20),
           ElevatedButton(
-            onPressed: () {},
+            onPressed: () {
+              // Navigator.push(
+              //     context,
+              //     MaterialPageRoute(
+              //       builder: (context) => Paymentscreen(),
+              //     ));
+            },
             style: ElevatedButton.styleFrom(
               backgroundColor: ColorConstants.primaryGreen,
               minimumSize: Size(double.infinity, 55),

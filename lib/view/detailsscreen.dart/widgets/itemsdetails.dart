@@ -4,7 +4,7 @@ import 'package:spiceway/model/productmodel.dart';
 
 class ItemsDetails extends StatelessWidget {
   final ProductModel product;
-  const ItemsDetails({super.key, required this.product});
+  ItemsDetails({super.key, required this.product});
 
   @override
   Widget build(BuildContext context) {

@@ -46,7 +46,13 @@ class Checkoutscreen extends StatelessWidget {
           Divider(),
           SizedBox(height: 20),
           ElevatedButton(
-            onPressed: () {},
+            onPressed: () {
+              // Navigator.push(
+              //     context,
+              //     MaterialPageRoute(
+              //       builder: (context) => Paymentscreen(),
+              //     ));
+            },
             style: ElevatedButton.styleFrom(
               backgroundColor: ColorConstants.primaryGreen,
               minimumSize: Size(double.infinity, 55),
