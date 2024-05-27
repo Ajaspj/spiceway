@@ -16,7 +16,7 @@ class DetailScreen extends StatefulWidget {
 
 class _DetailScreenState extends State<DetailScreen> {
   int currentImage = 0;
-  int currentColor = 1;
+  // int currentColor = 1;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -37,21 +37,36 @@ class _DetailScreenState extends State<DetailScreen> {
             SizedBox(height: 10),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: List.generate(
-                5,
-                (index) => Container(
-                  margin: EdgeInsets.only(right: 3),
+              children: [
+                Container(
+                  height: 300,
+                  width: 350,
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
-                    color: currentImage == index
-                        ? Colors.black
-                        : Colors.transparent,
-                    border: Border.all(
-                      color: Colors.black,
-                    ),
+                    // color: ColorConstants.primaryGreen,
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  padding: EdgeInsets.all(10),
+                  child: Image.network(
+                    widget.product.image,
+                    fit: BoxFit.fill,
                   ),
                 ),
-              ),
+              ],
+              // children: List.generate(
+              //   5,
+              //   (index) => Container(
+              //     margin: EdgeInsets.only(right: 3),
+              //     decoration: BoxDecoration(
+              //       borderRadius: BorderRadius.circular(10),
+              //       color: currentImage == index
+              //           ? Colors.black
+              //           : Colors.transparent,
+              //       border: Border.all(
+              //         color: Colors.black,
+              //       ),
+              //     ),
+              //   ),
+              // ),
             ),
             SizedBox(height: 20),
             Container(

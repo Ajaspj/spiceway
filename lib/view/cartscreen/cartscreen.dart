@@ -70,12 +70,13 @@ class _CartScreenState extends State<CartScreen> {
                                 height: 100,
                                 width: 90,
                                 decoration: BoxDecoration(
-                                  color: ColorConstants.primaryGreen,
+                                  // color: ColorConstants.primaryGreen,
                                   borderRadius: BorderRadius.circular(20),
                                 ),
                                 padding: EdgeInsets.all(10),
-                                child: Image.asset(
+                                child: Image.network(
                                   cartItems.image,
+                                  fit: BoxFit.fill,
                                 ),
                               ),
                               SizedBox(width: 10),

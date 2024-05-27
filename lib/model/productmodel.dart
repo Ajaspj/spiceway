@@ -1,7 +1,7 @@
 class ProductModel {
   final String title;
   final String description;
-  final String image;
+  var image;
   final String review;
   final String seller;
   final double price;

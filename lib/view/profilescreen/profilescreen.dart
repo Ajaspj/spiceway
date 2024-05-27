@@ -1,6 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+import 'package:spiceway/admin/adminhome.dart';
 import 'package:spiceway/constants/colorconstants.dart/colorconstants.dart';
 import 'package:spiceway/view/loginscreen/loginscreen.dart';
 
@@ -119,12 +119,33 @@ class Profilescreen extends StatelessWidget {
                             SizedBox(
                               height: 15,
                             ),
-                            Text(
-                              "",
-                              style: TextStyle(
-                                fontSize: 16,
+                            GestureDetector(
+                              onTap: () async {
+                                await FirebaseAuth.instance.signOut();
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => AdminHome(),
+                                  ),
+                                );
+                              },
+                              child: Container(
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(20),
+                                  color: ColorConstants.primaryGreen,
+                                ),
+                                padding: EdgeInsets.symmetric(
+                                    vertical: 8, horizontal: 12),
+                                child: Text(
+                                  "Add Data",
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 16,
+                                    color: Colors.white,
+                                  ),
+                                ),
                               ),
-                            ),
+                            )
                           ],
                         ),
                       ),

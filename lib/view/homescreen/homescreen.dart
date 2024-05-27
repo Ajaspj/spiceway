@@ -108,8 +108,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             childAspectRatio: 0.75,
                             crossAxisSpacing: 20,
                             mainAxisSpacing: 20),
-                        itemCount: 20,
-                        //  snapshot.data?.docs.length ?? 0,
+                        itemCount: snapshot.data?.docs.length ?? 0,
                         itemBuilder: (context, index) {
                           var map = snapshot.data!.docs[index];
                           return ProductCard(

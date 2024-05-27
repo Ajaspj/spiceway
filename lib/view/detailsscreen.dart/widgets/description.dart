@@ -30,14 +30,14 @@ class Description extends StatelessWidget {
               ),
             ),
             const Text(
-              "Specifications",
+              "",
               style: TextStyle(
                   fontWeight: FontWeight.bold,
                   color: Colors.black,
                   fontSize: 16),
             ),
             const Text(
-              "Reviews",
+              "",
               style: TextStyle(
                 fontSize: 16,
                 fontWeight: FontWeight.bold,
