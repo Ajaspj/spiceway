@@ -32,21 +32,32 @@ class ProductCard extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Center(
-                  child: Container(
-                    height: 130,
-                    width: 160,
-                    decoration: BoxDecoration(
-                      // color: ColorConstants.primaryGreen,
-                      borderRadius: BorderRadius.circular(20),
-                    ),
-                    padding: EdgeInsets.all(10),
-                    child: Image.network(
-                      product.image,
-                      fit: BoxFit.fill,
-                    ),
-                  ),
+                SizedBox(
+                  height: 5,
                 ),
+                Center(
+                    child: ClipRRect(
+                  borderRadius: BorderRadius.circular(20),
+                  child: Image.network(
+                    product.image,
+                    height: 140,
+                    width: 145,
+                  ),
+                )
+                    // Container(
+                    //   height: 130,
+                    //   width: 160,
+                    //   decoration: BoxDecoration(
+                    //     // color: ColorConstants.primaryGreen,
+                    //     borderRadius: BorderRadius.circular(20),
+                    //   ),
+                    //   padding: EdgeInsets.all(10),
+                    //   child: Image.network(
+                    //     product.image,
+                    //     fit: BoxFit.fill,
+                    //   ),
+                    // ),
+                    ),
                 SizedBox(height: 5),
                 // Center(
                 //   child: Image.network(

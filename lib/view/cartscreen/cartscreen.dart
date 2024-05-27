@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:spiceway/constants/colorconstants.dart/colorconstants.dart';
 import 'package:spiceway/controller/cartcontroller.dart';
-import 'package:spiceway/view/cartscreen/checkout.dart';
+import 'package:spiceway/view/cartscreen/checkoutbox.dart';
 
 class CartScreen extends StatefulWidget {
   CartScreen({super.key});
@@ -34,7 +34,7 @@ class _CartScreenState extends State<CartScreen> {
     return Scaffold(
       // for total and check out
       backgroundColor: ColorConstants.primaryGreen,
-      bottomSheet: Checkoutscreen(),
+      bottomSheet: Checkoutbox(),
       appBar: AppBar(
         backgroundColor: ColorConstants.primaryGreen,
         title: Text(

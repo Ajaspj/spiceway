@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:spiceway/constants/colorconstants.dart/colorconstants.dart';
-import 'package:spiceway/controller/cartcontroller.dart';
+import 'package:spiceway/controller/favcontroller.dart';
 
-class Checkoutscreen extends StatelessWidget {
-  Checkoutscreen({
+class favoritecheckoutbox extends StatelessWidget {
+  favoritecheckoutbox({
     super.key,
   });
 
   @override
   Widget build(BuildContext context) {
-    final provider = Cartcontroller.of(context);
+    final provider = Favoritecontroller.of(context);
     return Container(
       height: 180,
       width: double.infinity,

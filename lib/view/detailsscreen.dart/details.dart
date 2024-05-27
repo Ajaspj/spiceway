@@ -38,35 +38,15 @@ class _DetailScreenState extends State<DetailScreen> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Container(
-                  height: 300,
-                  width: 350,
-                  decoration: BoxDecoration(
-                    // color: ColorConstants.primaryGreen,
-                    borderRadius: BorderRadius.circular(20),
-                  ),
-                  padding: EdgeInsets.all(10),
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(20),
                   child: Image.network(
                     widget.product.image,
-                    fit: BoxFit.fill,
+                    height: 370,
+                    width: 380,
                   ),
-                ),
+                )
               ],
-              // children: List.generate(
-              //   5,
-              //   (index) => Container(
-              //     margin: EdgeInsets.only(right: 3),
-              //     decoration: BoxDecoration(
-              //       borderRadius: BorderRadius.circular(10),
-              //       color: currentImage == index
-              //           ? Colors.black
-              //           : Colors.transparent,
-              //       border: Border.all(
-              //         color: Colors.black,
-              //       ),
-              //     ),
-              //   ),
-              // ),
             ),
             SizedBox(height: 20),
             Container(

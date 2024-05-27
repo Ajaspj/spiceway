@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:spiceway/constants/colorconstants.dart/colorconstants.dart';
 import 'package:spiceway/controller/favcontroller.dart';
 
-import 'package:spiceway/view/favouritescreen/favcheckout.dart';
+import 'package:spiceway/view/favouritescreen/favcheckoutbox.dart';
 
 class Favoritescreen extends StatefulWidget {
   Favoritescreen({super.key});
@@ -18,7 +18,7 @@ class _FavoritescreenState extends State<Favoritescreen> {
     final finalList = provider.favorites;
     return Scaffold(
       backgroundColor: ColorConstants.primaryGreen,
-      bottomSheet: favoritecheckoutscreen(),
+      bottomSheet: favoritecheckoutbox(),
       appBar: AppBar(
         backgroundColor: ColorConstants.primaryGreen,
         title: Text(
@@ -51,12 +51,12 @@ class _FavoritescreenState extends State<Favoritescreen> {
                               height: 90,
                               width: 90,
                               decoration: BoxDecoration(
-                                color: ColorConstants.primaryGreen,
                                 borderRadius: BorderRadius.circular(20),
                               ),
                               padding: EdgeInsets.all(10),
-                              child: Image.asset(
+                              child: Image.network(
                                 favoritItems.image,
+                                fit: BoxFit.fill,
                               ),
                             ),
                             SizedBox(width: 10),

@@ -5,6 +5,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:spiceway/constants/colorconstants.dart/colorconstants.dart';
 import 'package:spiceway/model/productmodel.dart';
 
 class AdminHome extends StatefulWidget {
@@ -29,49 +30,50 @@ class _AdminHomeState extends State<AdminHome> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      backgroundColor: ColorConstants.primaryGreen,
+      appBar: AppBar(
+        backgroundColor: ColorConstants.primaryGreen,
+      ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: SingleChildScrollView(
           child: Column(children: [
             InkWell(
-                onTap: () async {
-                  file =
-                      await ImagePicker().pickImage(source: ImageSource.camera);
-                  setState(() {});
-                  if (file != null) {
-                    final storageref = FirebaseStorage.instance.ref();
-                    var imageref = storageref.child("image");
-                    var uploadref = imageref.child(file!.name);
-                    await uploadref.putFile(File(file!.path));
-                    var url = await uploadref.getDownloadURL();
-                    log(url.toString());
-                  }
-                },
-                child: file != null
-                    ? CircleAvatar(
-                        radius: 50,
-                        backgroundImage: FileImage(File(file!.path)),
-                      )
-                    : CircleAvatar(
-                        radius: 50,
-                        child: Icon(Icons.person),
-                      )),
-            // InkWell(
-            //   onTap: () {
-            //     collectionRef.add(ProductModel(
-            //       title: 'pepper',
-            //       review: 'review',
-            //       description: 'description',
-            //       image: 'image',
-            //       price: 100,
-            //       seller: 'seller',
-            //       rate: 10,
-            //       quantity: 1,
-            //     ).toMap());
-            //   },
-            //   child: Text("add"),
-            // ),
+              onTap: () async {
+                file =
+                    await ImagePicker().pickImage(source: ImageSource.camera);
+                setState(() {});
+                if (file != null) {
+                  final storageref = FirebaseStorage.instance.ref();
+                  var imageref = storageref.child("image");
+                  var uploadref = imageref.child(file!.name);
+                  await uploadref.putFile(File(file!.path));
+                  var url = await uploadref.getDownloadURL();
+                  log(url.toString());
+                }
+              },
+              child: file != null
+                  ? Container(
+                      height: 130,
+                      width: 160,
+                      decoration: BoxDecoration(
+                        // color: ColorConstants.primaryGreen,
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                      padding: EdgeInsets.all(10),
+                      child: Image(
+                        image: FileImage(File(file!.path)),
+                        fit: BoxFit.cover,
+                      ))
+                  : Container(
+                      height: 130,
+                      width: 160,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                      padding: EdgeInsets.all(10),
+                      child: Icon(Icons.add_a_photo)),
+            ),
             SizedBox(
               height: 20,
             ),

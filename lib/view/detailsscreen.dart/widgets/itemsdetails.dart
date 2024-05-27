@@ -30,6 +30,14 @@ class ItemsDetails extends StatelessWidget {
                     fontSize: 25,
                   ),
                 ),
+
+                Text(
+                  "${product.quantity} \kg",
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 17,
+                  ),
+                ),
                 SizedBox(height: 10),
                 // for rating
                 Row(
