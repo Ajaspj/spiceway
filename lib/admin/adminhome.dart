@@ -1,7 +1,6 @@
 import 'dart:developer';
 import 'dart:io';
 import 'package:cloud_firestore/cloud_firestore.dart';
-
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
@@ -85,7 +84,6 @@ class _AdminHomeState extends State<AdminHome> {
             SizedBox(height: 10),
             TextFormField(
               controller: reviewcontroller,
-              keyboardType: TextInputType.number,
               decoration: InputDecoration(
                   label: Text("Enter review"), border: OutlineInputBorder()),
             ),
@@ -105,18 +103,21 @@ class _AdminHomeState extends State<AdminHome> {
             SizedBox(height: 10),
             TextFormField(
               controller: pricecontroller,
+              keyboardType: TextInputType.number,
               decoration: InputDecoration(
                   label: Text("Enter price"), border: OutlineInputBorder()),
             ),
             SizedBox(height: 10),
             TextFormField(
               controller: ratecontroller,
+              keyboardType: TextInputType.number,
               decoration: InputDecoration(
                   label: Text("Enter rating"), border: OutlineInputBorder()),
             ),
             SizedBox(height: 10),
             TextFormField(
               controller: quantitycontroller,
+              keyboardType: TextInputType.number,
               decoration: InputDecoration(
                   label: Text("Enter quantity"), border: OutlineInputBorder()),
             ),
@@ -124,20 +125,15 @@ class _AdminHomeState extends State<AdminHome> {
             ElevatedButton(
                 onPressed: () {
                   collectionRef.add(ProductModel(
-                              title: titlecontroller.text,
-                              review: reviewcontroller.text,
-                              description: descriptioncontroller.text,
-                              image: url.toString(),
-                              price: double.parse(pricecontroller.text),
-                              seller: sellercontroller.text,
-                              rate: double.parse(ratecontroller.text),
-                              quantity: int.parse(quantitycontroller.text))
-                          .toMap()
-                      //   {
-                      //   "title": titlecontroller.text,
-                      //   "review": reviewcontroller.text,
-                      // }
-                      );
+                          title: titlecontroller.text,
+                          review: reviewcontroller.text,
+                          description: descriptioncontroller.text,
+                          image: url.toString(),
+                          price: double.parse(pricecontroller.text),
+                          seller: sellercontroller.text,
+                          rate: double.parse(ratecontroller.text),
+                          quantity: int.parse(quantitycontroller.text))
+                      .toMap());
                 },
                 child: Text("add")),
           ]),
