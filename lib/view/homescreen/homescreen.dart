@@ -1,13 +1,9 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:spiceway/constants/colorconstants.dart/colorconstants.dart';
-
 import 'package:spiceway/model/productmodel.dart';
-
 import 'package:spiceway/view/homescreen/widgets/productcart.dart';
-
 import 'package:spiceway/view/homescreen/widgets/searchbar.dart';
-import 'package:spiceway/view/orderscreen/orderscreen.dart';
 import 'package:spiceway/view/profilescreen/profilescreen.dart';
 
 class HomeScreen extends StatefulWidget {
