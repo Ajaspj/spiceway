@@ -1,64 +1,33 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:spiceway/constants/colorconstants.dart/colorconstants.dart';
-import 'package:spiceway/controller/cartcontroller.dart';
-import 'package:spiceway/view/cartscreen/checkoutbox.dart';
-import 'package:spiceway/view/orderscreen/orderscreen.dart';
+import 'package:spiceway/controller/ordercontroller.dart';
+import 'package:spiceway/view/trackorderscreen/trackorderscreen.dart';
 
-class CartScreen extends StatefulWidget {
-  CartScreen({super.key});
+class orderscreen extends StatefulWidget {
+  orderscreen({super.key});
 
   @override
-  State<CartScreen> createState() => _CartScreenState();
+  State<orderscreen> createState() => _orderscreenState();
 }
 
-class _CartScreenState extends State<CartScreen> {
+class _orderscreenState extends State<orderscreen> {
   @override
   Widget build(BuildContext context) {
-    final provider = Cartcontroller.of(context);
-    final finalList = provider.cart;
-
-    productQuantity(IconData icon, int index) {
-      return GestureDetector(
-        onTap: () {
-          setState(() {
-            icon == Icons.add
-                ? provider.incrementQtn(index)
-                : provider.decrementQtn(index);
-          });
-        },
-        child: Icon(
-          icon,
-        ),
-      );
-    }
+    final provider = Ordercontroller.of(context);
+    final finalList = provider.orders;
 
     return Scaffold(
       // for total and check out
       backgroundColor: ColorConstants.primaryGreen,
-      bottomSheet: Checkoutbox(),
+
       appBar: AppBar(
         backgroundColor: ColorConstants.primaryGreen,
         title: Text(
-          "My Cart",
+          "My Orders",
           style: TextStyle(fontWeight: FontWeight.bold),
         ),
         centerTitle: true,
-        actions: [
-          IconButton(
-            onPressed: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => orderscreen()));
-            },
-            icon: Icon(
-              size: 30,
-              Icons.shopping_bag,
-              color: ColorConstants.primaryBlack,
-            ),
-          ),
-          SizedBox(
-            width: 20,
-          )
-        ],
       ),
 
       body: SafeArea(
@@ -69,7 +38,7 @@ class _CartScreenState extends State<CartScreen> {
                 shrinkWrap: true,
                 itemCount: finalList.length,
                 itemBuilder: (context, index) {
-                  final cartItems = finalList[index];
+                  final orderitems = finalList[index];
                   return Stack(
                     children: [
                       Padding(
@@ -92,7 +61,7 @@ class _CartScreenState extends State<CartScreen> {
                                 ),
                                 padding: EdgeInsets.all(10),
                                 child: Image.network(
-                                  cartItems.image,
+                                  orderitems.image,
                                   fit: BoxFit.fill,
                                 ),
                               ),
@@ -101,7 +70,7 @@ class _CartScreenState extends State<CartScreen> {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Text(
-                                    cartItems.title,
+                                    orderitems.title,
                                     style: TextStyle(
                                       fontSize: 16,
                                       color: Colors.black,
@@ -111,7 +80,7 @@ class _CartScreenState extends State<CartScreen> {
                                   SizedBox(height: 5),
                                   SizedBox(height: 8),
                                   Text(
-                                    "\₹${cartItems.price}",
+                                    "\₹${orderitems.price}",
                                     style: TextStyle(
                                       fontSize: 14,
                                       fontWeight: FontWeight.bold,
@@ -129,16 +98,29 @@ class _CartScreenState extends State<CartScreen> {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.end,
                           children: [
-                            IconButton(
-                              onPressed: () {
-                                finalList[index].quantity = 1;
-                                finalList.removeAt(index);
-                                setState(() {});
+                            GestureDetector(
+                              onTap: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => Trackorderscreen(),
+                                    ));
                               },
-                              icon: Icon(
-                                Icons.delete,
-                                color: Colors.red,
-                                size: 20,
+                              child: Container(
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(20),
+                                  color: ColorConstants.primaryGreen,
+                                ),
+                                padding: EdgeInsets.symmetric(
+                                    vertical: 8, horizontal: 12),
+                                child: Text(
+                                  "Track order",
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 16,
+                                    color: Colors.white,
+                                  ),
+                                ),
                               ),
                             ),
                             SizedBox(height: 10),
@@ -155,17 +137,14 @@ class _CartScreenState extends State<CartScreen> {
                               child: Row(
                                 children: [
                                   SizedBox(width: 10),
-                                  productQuantity(Icons.remove, index),
                                   SizedBox(width: 10),
                                   Text(
-                                    cartItems.quantity.toString(),
+                                    orderitems.quantity.toString(),
                                     style: TextStyle(
                                       color: Colors.black,
                                       fontWeight: FontWeight.bold,
                                     ),
                                   ),
-                                  SizedBox(width: 10),
-                                  productQuantity(Icons.add, index),
                                   SizedBox(width: 10),
                                 ],
                               ),

@@ -6,6 +6,7 @@ import 'package:provider/provider.dart';
 import 'package:spiceway/controller/cartcontroller.dart';
 import 'package:spiceway/controller/favcontroller.dart';
 import 'package:spiceway/controller/logincontroller.dart';
+import 'package:spiceway/controller/ordercontroller.dart';
 import 'package:spiceway/controller/registrationcontroller.dart';
 import 'package:spiceway/firebase_options.dart';
 
@@ -37,6 +38,9 @@ class MyApp extends StatelessWidget {
         ),
         ChangeNotifierProvider(
           create: (context) => Favoritecontroller(),
+        ),
+        ChangeNotifierProvider(
+          create: (context) => Ordercontroller(),
         ),
       ],
       child: MaterialApp(

@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:spiceway/admin/adminhome.dart';
+import 'package:spiceway/Adddatascreen/adddatascreen.dart';
+
 import 'package:spiceway/constants/colorconstants.dart/colorconstants.dart';
 import 'package:spiceway/view/loginscreen/loginscreen.dart';
 
@@ -127,7 +128,7 @@ class Profilescreen extends StatelessWidget {
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (context) => AdminHome(),
+                                    builder: (context) => AdddataScreen(),
                                   ),
                                 );
                               },

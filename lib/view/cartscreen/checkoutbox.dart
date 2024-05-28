@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:spiceway/constants/colorconstants.dart/colorconstants.dart';
 import 'package:spiceway/controller/cartcontroller.dart';
+import 'package:spiceway/view/checkoutscreen/checkoutscreen.dart';
 
 class Checkoutbox extends StatelessWidget {
   Checkoutbox({
@@ -47,11 +48,8 @@ class Checkoutbox extends StatelessWidget {
           SizedBox(height: 20),
           ElevatedButton(
             onPressed: () {
-              // Navigator.push(
-              //     context,
-              //     MaterialPageRoute(
-              //       builder: (context) => Paymentscreen(),
-              //     ));
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => checkoutscreen()));
             },
             style: ElevatedButton.styleFrom(
               backgroundColor: ColorConstants.primaryGreen,

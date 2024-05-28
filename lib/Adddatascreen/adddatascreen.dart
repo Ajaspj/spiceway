@@ -7,14 +7,14 @@ import 'package:image_picker/image_picker.dart';
 import 'package:spiceway/constants/colorconstants.dart/colorconstants.dart';
 import 'package:spiceway/model/productmodel.dart';
 
-class AdminHome extends StatefulWidget {
-  const AdminHome({super.key});
+class AdddataScreen extends StatefulWidget {
+  const AdddataScreen({super.key});
 
   @override
-  State<AdminHome> createState() => _AdminHomeState();
+  State<AdddataScreen> createState() => _AdddataScreenState();
 }
 
-class _AdminHomeState extends State<AdminHome> {
+class _AdddataScreenState extends State<AdddataScreen> {
   XFile? file;
   var url;
   TextEditingController titlecontroller = TextEditingController();

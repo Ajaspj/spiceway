@@ -7,6 +7,7 @@ import 'package:spiceway/model/productmodel.dart';
 import 'package:spiceway/view/homescreen/widgets/productcart.dart';
 
 import 'package:spiceway/view/homescreen/widgets/searchbar.dart';
+import 'package:spiceway/view/orderscreen/orderscreen.dart';
 import 'package:spiceway/view/profilescreen/profilescreen.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -41,6 +42,9 @@ class _HomeScreenState extends State<HomeScreen> {
                 Icons.account_circle,
                 color: ColorConstants.primaryBlack,
               ),
+            ),
+            SizedBox(
+              width: 10,
             ),
           ],
         ),

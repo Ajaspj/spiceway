@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:spiceway/constants/colorconstants.dart/colorconstants.dart';
+import 'package:spiceway/controller/cartcontroller.dart';
 import 'package:spiceway/controller/favcontroller.dart';
-
-import 'package:spiceway/view/favouritescreen/favcheckoutbox.dart';
 
 class Favoritescreen extends StatefulWidget {
   Favoritescreen({super.key});
@@ -14,11 +13,12 @@ class Favoritescreen extends StatefulWidget {
 class _FavoritescreenState extends State<Favoritescreen> {
   @override
   Widget build(BuildContext context) {
+    final cart = Cartcontroller.of(context);
+
     final provider = Favoritecontroller.of(context);
     final finalList = provider.favorites;
     return Scaffold(
       backgroundColor: ColorConstants.primaryGreen,
-      bottomSheet: favoritecheckoutbox(),
       appBar: AppBar(
         backgroundColor: ColorConstants.primaryGreen,
         title: Text(
@@ -100,6 +100,43 @@ class _FavoritescreenState extends State<Favoritescreen> {
                             },
                             child:
                                 Icon(Icons.delete, color: Colors.red, size: 25),
+                          ),
+                          SizedBox(
+                            height: 10,
+                          ),
+                          GestureDetector(
+                            onTap: () {
+                              cart.Addcart(favoritItems);
+                              const snackBar = SnackBar(
+                                content: Text(
+                                  "Successfully added!",
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 25,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                                duration: Duration(seconds: 1),
+                              );
+                              ScaffoldMessenger.of(context)
+                                  .showSnackBar(snackBar);
+                            },
+                            child: Container(
+                              width: 100,
+                              height: 30,
+                              decoration: BoxDecoration(
+                                color: ColorConstants.primaryGreen,
+                                borderRadius: BorderRadius.circular(20),
+                              ),
+                              alignment: Alignment.center,
+                              child: const Text(
+                                "Add to cart",
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.white,
+                                    fontSize: 16),
+                              ),
+                            ),
                           ),
                         ],
                       ),

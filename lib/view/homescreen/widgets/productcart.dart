@@ -43,30 +43,8 @@ class ProductCard extends StatelessWidget {
                     height: 140,
                     width: 145,
                   ),
-                )
-                    // Container(
-                    //   height: 130,
-                    //   width: 160,
-                    //   decoration: BoxDecoration(
-                    //     // color: ColorConstants.primaryGreen,
-                    //     borderRadius: BorderRadius.circular(20),
-                    //   ),
-                    //   padding: EdgeInsets.all(10),
-                    //   child: Image.network(
-                    //     product.image,
-                    //     fit: BoxFit.fill,
-                    //   ),
-                    // ),
-                    ),
+                )),
                 SizedBox(height: 5),
-                // Center(
-                //   child: Image.network(
-                //     product.image,
-                //     width: 150,
-                //     height: 150,
-                //     fit: BoxFit.cover,
-                //   ),
-                // ),
                 SizedBox(height: 10),
                 Padding(
                   padding: const EdgeInsets.only(left: 10),
