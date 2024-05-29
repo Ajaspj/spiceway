@@ -54,7 +54,8 @@ class _AddToCartState extends State<AddToCart> {
                   ),
                   const SizedBox(width: 5),
                   Text(
-                    currentIndex.toString(),
+                    "${currentIndex.toString()}\kg",
+                    // currentIndex.toString(),
                     style: const TextStyle(
                       fontWeight: FontWeight.bold,
                       color: Colors.white,

@@ -56,16 +56,6 @@ class _HomeScreenState extends State<HomeScreen> {
                   child: CircularProgressIndicator(),
                 );
               }
-              // collectionRef.add(ProductModel(
-              //   title: 'pepper',
-              //   review: 'review',
-              //   description: 'description',
-              //   image: 'image',
-              //   price: 100,
-              //   seller: 'seller',
-              //   rate: 10,
-              //   quantity: 1,
-              // ).toMap());
 
               return SingleChildScrollView(
                 child: Padding(

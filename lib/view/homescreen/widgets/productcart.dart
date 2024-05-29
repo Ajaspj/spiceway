@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-
 import 'package:spiceway/constants/colorconstants.dart/colorconstants.dart';
 import 'package:spiceway/controller/favcontroller.dart';
 import 'package:spiceway/model/productmodel.dart';
-
 import 'package:spiceway/view/detailsscreen.dart/details.dart';
 
 class ProductCard extends StatelessWidget {

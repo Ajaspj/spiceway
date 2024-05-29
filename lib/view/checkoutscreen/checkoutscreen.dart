@@ -1,8 +1,8 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-import 'package:razorpay_flutter/razorpay_flutter.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:spiceway/constants/colorconstants.dart/colorconstants.dart';
-import 'package:spiceway/controller/cartcontroller.dart';
+import 'package:spiceway/view/paymentscreen/paymentscreen.dart';
 
 class checkoutscreen extends StatefulWidget {
   const checkoutscreen({super.key});
@@ -12,84 +12,62 @@ class checkoutscreen extends StatefulWidget {
 }
 
 class _checkoutscreenState extends State<checkoutscreen> {
+  XFile? file;
+  var url;
+  TextEditingController namecontroller = TextEditingController();
+  TextEditingController phonenumbercontroller = TextEditingController();
+  TextEditingController addresscontroller = TextEditingController();
+
+  CollectionReference collectionRef =
+      FirebaseFirestore.instance.collection("users");
   @override
   Widget build(BuildContext context) {
-    double amount = context.read<Cartcontroller>().totalPrice();
     return Scaffold(
-      backgroundColor: ColorConstants.primaryGreen,
-      appBar: AppBar(
         backgroundColor: ColorConstants.primaryGreen,
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              "\₹${amount}",
-              style: TextStyle(
-                fontSize: 30,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            ElevatedButton(
-                onPressed: () {
-                  Razorpay razorpay = Razorpay();
-                  var options = {
-                    'key': 'rzp_live_ILgsfZCZoFIKMb',
-                    'amount': 100,
-                    'name': 'Acme Corp.',
-                    'description': 'Fine T-Shirt',
-                    'retry': {'enabled': true, 'max_count': 1},
-                    'send_sms_hash': true,
-                    'prefill': {
-                      'contact': '8888888888',
-                      'email': 'test@razorpay.com'
-                    },
-                    'external': {
-                      'wallets': ['paytm']
-                    }
-                  };
-                  razorpay.on(
-                      Razorpay.EVENT_PAYMENT_ERROR, handlePaymentErrorResponse);
-                  razorpay.on(Razorpay.EVENT_PAYMENT_SUCCESS,
-                      handlePaymentSuccessResponse);
-                  razorpay.on(Razorpay.EVENT_EXTERNAL_WALLET,
-                      handleExternalWalletSelected);
-                  razorpay.open(options);
-                },
-                child: const Text("Pay with Razorpay")),
-          ],
+        appBar: AppBar(
+          backgroundColor: ColorConstants.primaryGreen,
         ),
-      ),
-    );
-  }
-
-  void handlePaymentErrorResponse(PaymentFailureResponse response) {
-    showAlertDialog(context, "Payment Failed",
-        "Code: ${response.code}\nDescription: ${response.message}\nMetadata:${response.error.toString()}");
-  }
-
-  void handlePaymentSuccessResponse(PaymentSuccessResponse response) {
-    showAlertDialog(
-        context, "Payment Successful", "Payment ID: ${response.paymentId}");
-  }
-
-  void handleExternalWalletSelected(ExternalWalletResponse response) {
-    showAlertDialog(
-        context, "External Wallet Selected", "${response.walletName}");
-  }
-
-  void showAlertDialog(BuildContext context, String title, String message) {
-    AlertDialog alert = AlertDialog(
-      title: Text(title),
-      content: Text(message),
-    );
-
-    showDialog(
-      context: context,
-      builder: (BuildContext context) {
-        return alert;
-      },
-    );
+        body: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: SingleChildScrollView(
+            child: Column(children: [
+              SizedBox(
+                height: 20,
+              ),
+              TextFormField(
+                controller: namecontroller,
+                decoration: InputDecoration(
+                    label: Text("Enter your name"),
+                    border: OutlineInputBorder()),
+              ),
+              SizedBox(height: 20),
+              TextFormField(
+                controller: phonenumbercontroller,
+                keyboardType: TextInputType.number,
+                decoration: InputDecoration(
+                    label: Text("Enter your phonenumber"),
+                    border: OutlineInputBorder()),
+              ),
+              SizedBox(height: 20),
+              TextFormField(
+                controller: addresscontroller,
+                decoration: InputDecoration(
+                    label: Text("Enter your address"),
+                    border: OutlineInputBorder()),
+              ),
+              SizedBox(height: 20),
+              ElevatedButton(
+                  onPressed: () {
+                    collectionRef.add({
+                      "name": namecontroller.text,
+                      "phonenumber": phonenumbercontroller.text,
+                      "address": addresscontroller.text
+                    });
+                  },
+                  child: Text("save details")),
+            ]),
+          ),
+        ),
+        bottomSheet: payment());
   }
 }

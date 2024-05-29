@@ -158,7 +158,8 @@ class _CartScreenState extends State<CartScreen> {
                                   productQuantity(Icons.remove, index),
                                   SizedBox(width: 10),
                                   Text(
-                                    cartItems.quantity.toString(),
+                                    "${cartItems.quantity.toString()}\kg",
+                                    // cartItems.quantity.toString(),
                                     style: TextStyle(
                                       color: Colors.black,
                                       fontWeight: FontWeight.bold,
