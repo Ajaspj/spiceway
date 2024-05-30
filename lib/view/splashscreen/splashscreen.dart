@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:spiceway/constants/colorconstants.dart/colorconstants.dart';
 import 'package:spiceway/view/homescreen/homescreen.dart';
-import 'package:spiceway/view/loginscreen/loginscreen.dart';
+import 'package:spiceway/view/welcomescreen/welcome.dart';
 
 class SplashScreen extends StatefulWidget {
   SplashScreen({super.key, this.islogged = false});
@@ -25,7 +25,7 @@ class _SplashScreenState extends State<SplashScreen> {
         Navigator.pushReplacement(
             context,
             MaterialPageRoute(
-              builder: (context) => LoginScreen(),
+              builder: (context) => Welcomescreen(),
             ));
       }
     });
@@ -40,16 +40,7 @@ class _SplashScreenState extends State<SplashScreen> {
           child: Image.asset(
         "assets/images/spiceway-high-resolution-logo-black-transparent.png",
         scale: 5.0,
-      )
-          //     Text(
-          //   "Spice Way... \n spice your way with spiceway ! ",
-          //   style: TextStyle(
-          //       fontSize: 25,
-          //       fontStyle: FontStyle.italic,
-          //       fontWeight: FontWeight.bold,
-          //       color: ColorConstants.primaryBlack),
-          // )
-          ),
+      )),
     );
   }
 }
