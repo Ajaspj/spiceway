@@ -58,7 +58,7 @@ class _paymentState extends State<payment> {
             onPressed: () {
               Razorpay razorpay = Razorpay();
               var options = {
-                'key': 'rzp_live_ILgsfZCZoFIKMb',
+                'key': 'rzp_test_OZLq5TZcJ6rhwg',
                 'amount': amount * 100,
                 'name': 'SpiceWay Corp.',
                 'description': 'Spices',
