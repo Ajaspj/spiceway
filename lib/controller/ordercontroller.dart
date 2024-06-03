@@ -5,7 +5,7 @@ import 'package:spiceway/model/productmodel.dart';
 class Ordercontroller extends ChangeNotifier {
   final List<ProductModel> orderslist = [];
   List<ProductModel> get orders => orderslist;
-  void toggleFavorite(ProductModel product) {
+  void addorder(ProductModel product) {
     if (orderslist.contains(product)) {
       orderslist.remove(product);
     } else {

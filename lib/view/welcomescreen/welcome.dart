@@ -29,9 +29,7 @@ class _WelcomescreenState extends State<Welcomescreen> {
                 style: TextStyle(fontSize: 20),
                 textAlign: TextAlign.justify,
               ),
-              image: Image.network(
-                "https://images.alphacoders.com/110/1103539.jpg",
-              )),
+              image: Image.asset("assets/images/welcome1.jpg")),
           PageViewModel(
               decoration:
                   PageDecoration(pageColor: ColorConstants.primaryGreen),
@@ -43,8 +41,7 @@ class _WelcomescreenState extends State<Welcomescreen> {
                 style: TextStyle(fontSize: 20),
                 textAlign: TextAlign.left,
               ),
-              image: Image.network(
-                  "https://c4.wallpaperflare.com/wallpaper/100/468/880/bowl-spices-bay-leaf-black-pepper-wallpaper-preview.jpg")),
+              image: Image.asset("assets/images/welcome2.jpg")),
           PageViewModel(
               decoration:
                   PageDecoration(pageColor: ColorConstants.primaryGreen),
@@ -55,8 +52,7 @@ class _WelcomescreenState extends State<Welcomescreen> {
                 style: TextStyle(fontSize: 20),
                 textAlign: TextAlign.left,
               ),
-              image: Image.network(
-                  "https://www.culinairecookingschool.com.au/wp-content/uploads/2020/01/32A0274DE229432AAB1F97096D07A011.jpg"))
+              image: Image.asset("assets/images/welcome3.jpg"))
         ],
         showSkipButton: true,
         skip: Text("Skip"),
