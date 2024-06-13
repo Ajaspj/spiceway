@@ -1,6 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-
 import 'package:spiceway/constants/colorconstants.dart/colorconstants.dart';
 import 'package:spiceway/view/loginscreen/loginscreen.dart';
 
@@ -56,64 +55,64 @@ class _ForgotScreenState extends State<ForgotScreen> {
             ),
             Text("enter your mail"),
             Expanded(
-                key: formkey,
                 child: Form(
-                  child: Padding(
-                    padding: EdgeInsets.only(left: 10),
-                    child: ListView(
-                      children: [
-                        Container(
-                          padding: EdgeInsets.only(left: 10),
-                          decoration: BoxDecoration(
-                              border: Border.all(
-                                color: ColorConstants.primarWhite,
-                              ),
-                              borderRadius: BorderRadius.circular(30)),
-                          child: TextFormField(
-                            controller: mailcontroller,
-                            validator: (value) {
-                              if (value == null || value.isEmpty) {
-                                return "please enter email";
-                              }
-                              return null;
-                            },
-                            decoration: InputDecoration(
-                              hintText: "E-mail",
-                            ),
+              key: formkey,
+              child: Padding(
+                padding: EdgeInsets.only(left: 10),
+                child: ListView(
+                  children: [
+                    Container(
+                      padding: EdgeInsets.only(left: 10),
+                      decoration: BoxDecoration(
+                          border: Border.all(
+                            color: ColorConstants.primarWhite,
                           ),
+                          borderRadius: BorderRadius.circular(30)),
+                      child: TextFormField(
+                        controller: mailcontroller,
+                        validator: (value) {
+                          if (value == null || value.isEmpty) {
+                            return "please enter email";
+                          }
+                          return null;
+                        },
+                        decoration: InputDecoration(
+                          hintText: "E-mail",
                         ),
-                        SizedBox(
-                          height: 40,
-                        ),
-                        GestureDetector(
-                          onTap: () {
-                            if (formkey.currentState!.validate()) {
-                              setState(() {
-                                email = mailcontroller.text;
-                              });
-                              resetpassword();
-                            }
-                          },
-                          child: Container(
-                            width: 140,
-                            padding: EdgeInsets.all(10),
-                            decoration: BoxDecoration(
-                                color: ColorConstants.primarWhite,
-                                borderRadius: BorderRadius.circular(10)),
-                            child: Center(
-                              child: Text(
-                                "sent email",
-                                style: TextStyle(
-                                  fontSize: 18,
-                                ),
-                              ),
-                            ),
-                          ),
-                        )
-                      ],
+                      ),
                     ),
-                  ),
-                )),
+                    SizedBox(
+                      height: 40,
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        if (formkey.currentState!.validate()) {
+                          setState(() {
+                            email = mailcontroller.text;
+                          });
+                          resetpassword();
+                        }
+                      },
+                      child: Container(
+                        width: 140,
+                        padding: EdgeInsets.all(10),
+                        decoration: BoxDecoration(
+                            color: ColorConstants.primarWhite,
+                            borderRadius: BorderRadius.circular(10)),
+                        child: Center(
+                          child: Text(
+                            "sent email",
+                            style: TextStyle(
+                              fontSize: 18,
+                            ),
+                          ),
+                        ),
+                      ),
+                    )
+                  ],
+                ),
+              ),
+            )),
             TextButton(
                 onPressed: () {
                   Navigator.push(

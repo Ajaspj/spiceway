@@ -105,10 +105,10 @@ class Profilescreen extends StatelessWidget {
                             ),
                             SizedBox(height: 10),
                             Text(
-                              "Ajas pj",
+                              FirebaseAuth.instance.currentUser?.email ?? '',
                               style: TextStyle(
                                 fontWeight: FontWeight.w800,
-                                fontSize: 35,
+                                fontSize: 30,
                               ),
                             ),
                             Text(
