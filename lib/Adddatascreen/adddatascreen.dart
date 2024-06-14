@@ -125,6 +125,18 @@ class _AdddataScreenState extends State<AdddataScreen> {
             SizedBox(height: 10),
             ElevatedButton(
                 onPressed: () {
+                  const snackBar = SnackBar(
+                    content: Text(
+                      "Successfully added!",
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 25,
+                        color: Colors.white,
+                      ),
+                    ),
+                    duration: Duration(seconds: 1),
+                  );
+                  ScaffoldMessenger.of(context).showSnackBar(snackBar);
                   collectionRef.add(ProductModel(
                           title: titlecontroller.text,
                           review: reviewcontroller.text,

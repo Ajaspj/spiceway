@@ -1,25 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:spiceway/constants/colorconstants.dart/colorconstants.dart';
-import 'package:spiceway/controller/ordercontroller.dart';
+import 'package:spiceway/controller/cartcontroller.dart';
 import 'package:spiceway/view/trackorderscreen/trackorderscreen.dart';
 
-class orderscreen extends StatefulWidget {
-  orderscreen({super.key});
+class Orderscreen extends StatefulWidget {
+  Orderscreen({super.key});
 
   @override
-  State<orderscreen> createState() => _orderscreenState();
+  State<Orderscreen> createState() => _OrderscreenState();
 }
 
-class _orderscreenState extends State<orderscreen> {
+class _OrderscreenState extends State<Orderscreen> {
   @override
   Widget build(BuildContext context) {
-    final provider = Ordercontroller.of(context);
-    final finalList = provider.orders;
-
+    final provider = Cartcontroller.of(context);
+    final finalList = provider.cart;
     return Scaffold(
-      // for total and check out
       backgroundColor: ColorConstants.primaryGreen,
-
       appBar: AppBar(
         backgroundColor: ColorConstants.primaryGreen,
         title: Text(
@@ -28,7 +25,6 @@ class _orderscreenState extends State<orderscreen> {
         ),
         centerTitle: true,
       ),
-
       body: SafeArea(
         child: Column(
           children: [
@@ -37,7 +33,7 @@ class _orderscreenState extends State<orderscreen> {
                 shrinkWrap: true,
                 itemCount: finalList.length,
                 itemBuilder: (context, index) {
-                  final orderitems = finalList[index];
+                  final cartItems = finalList[index];
                   return Stack(
                     children: [
                       Padding(
@@ -60,7 +56,7 @@ class _orderscreenState extends State<orderscreen> {
                                 ),
                                 padding: EdgeInsets.all(10),
                                 child: Image.network(
-                                  orderitems.image,
+                                  cartItems.image,
                                   fit: BoxFit.fill,
                                 ),
                               ),
@@ -69,7 +65,7 @@ class _orderscreenState extends State<orderscreen> {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Text(
-                                    orderitems.title,
+                                    cartItems.title,
                                     style: TextStyle(
                                       fontSize: 16,
                                       color: Colors.black,
@@ -79,7 +75,7 @@ class _orderscreenState extends State<orderscreen> {
                                   SizedBox(height: 5),
                                   SizedBox(height: 8),
                                   Text(
-                                    "\₹${orderitems.price}",
+                                    "\₹${cartItems.price}",
                                     style: TextStyle(
                                       fontSize: 14,
                                       fontWeight: FontWeight.bold,
@@ -97,31 +93,6 @@ class _orderscreenState extends State<orderscreen> {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.end,
                           children: [
-                            GestureDetector(
-                              onTap: () {
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                      builder: (context) => Trackorderscreen(),
-                                    ));
-                              },
-                              child: Container(
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(20),
-                                  color: ColorConstants.primaryGreen,
-                                ),
-                                padding: EdgeInsets.symmetric(
-                                    vertical: 8, horizontal: 12),
-                                child: Text(
-                                  "Track order",
-                                  style: TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 16,
-                                    color: Colors.white,
-                                  ),
-                                ),
-                              ),
-                            ),
                             SizedBox(height: 10),
                             Container(
                               height: 40,
@@ -138,16 +109,52 @@ class _orderscreenState extends State<orderscreen> {
                                   SizedBox(width: 10),
                                   SizedBox(width: 10),
                                   Text(
-                                    orderitems.quantity.toString(),
+                                    "${cartItems.quantity.toString()}\kg",
                                     style: TextStyle(
                                       color: Colors.black,
                                       fontWeight: FontWeight.bold,
                                     ),
                                   ),
                                   SizedBox(width: 10),
+                                  SizedBox(width: 10),
                                 ],
                               ),
                             ),
+                            SizedBox(
+                              height: 20,
+                            ),
+                            GestureDetector(
+                              onTap: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => Trackorderscreen(),
+                                    ));
+                              },
+                              child: Container(
+                                  height: 40,
+                                  decoration: BoxDecoration(
+                                    color: ColorConstants.primaryGreen,
+                                    border: Border.all(
+                                      color: Colors.grey.shade200,
+                                      width: 2,
+                                    ),
+                                    borderRadius: BorderRadius.circular(20),
+                                  ),
+                                  child: Row(children: [
+                                    SizedBox(width: 10),
+                                    SizedBox(width: 10),
+                                    Text(
+                                      "Track order",
+                                      style: TextStyle(
+                                        color: Colors.black,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
+                                    SizedBox(width: 10),
+                                    SizedBox(width: 10),
+                                  ])),
+                            )
                           ],
                         ),
                       )

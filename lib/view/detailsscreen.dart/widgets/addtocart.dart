@@ -100,7 +100,7 @@ class _AddToCartState extends State<AddToCart> {
                   borderRadius: BorderRadius.circular(50),
                 ),
                 alignment: Alignment.center,
-                padding: const EdgeInsets.symmetric(horizontal: 50),
+                padding: const EdgeInsets.symmetric(horizontal: 40),
                 child: const Text(
                   "Add to Cart",
                   style: TextStyle(
